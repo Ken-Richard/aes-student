@@ -1,0 +1,11 @@
+{
+  "presets": ["react", "es2015"],
+  "plugins": ["react-hot-loader/babel"]
+}
+
+
+This about an ebook with 10 pages, numbered 1 to 10.
+
+Using react-router you could see how /pages/3 would render
+page number 3. The router updates the PROPS but not the
+
