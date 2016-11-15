@@ -3,3 +3,4 @@ dist/bundle.js
 *sublime-project
 *sublime-workspace
 .DS_Store
+npm-debug.log
