@@ -20,10 +20,3 @@ export function previousPage() {
   };
 }
 
-export function currentPageUpdated(current_page) {
-  console.log("ACTION_CREATOR: currentPageUpdated");
-  return {
-    type: 'CURRENT_PAGE_UPDATED',
-    current_page: current_page
-  };
-}
