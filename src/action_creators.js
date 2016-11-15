@@ -5,3 +5,11 @@ export function setState(state) {
     state
   };
 }
+
+export function updateBookmark(page_number) {
+  console.log("ACTION_CREATOR: updateBookmark");
+  return {
+    type: 'UPDATE_BOOKMARK',
+    page_number: page_number
+  };
+}

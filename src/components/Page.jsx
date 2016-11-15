@@ -17,8 +17,11 @@ export const Page = React.createClass({
 });
 
 function mapStateToProps(state, ownProps) {
-  console.log('mapStateToProps')
   const page_number = Number.parseInt(ownProps.params.page_number);
+  const page_from_state = state.get('current_page_number');
+  console.log('mapStateToProps PageFromParam:' + page_number + ' PageFromState:' + page_from_state);
+  console.log(state.toJS());
+
   const page = state.get('pages').get(page_number-1);
   const page_count = state.get('pages').size;
   return {

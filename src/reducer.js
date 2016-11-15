@@ -2,7 +2,7 @@ import {List, Map} from 'immutable';
 import {fixtures} from '../src/fixtures';
 
 function initialState() {
-  return Map().merge(fixtures).set('current_page',1);
+  return Map().merge(fixtures);
 }
 
 function setState(state, newState) {
@@ -25,6 +25,8 @@ export default function(state, action) {
   switch (action.type) {
   case 'SET_STATE':
     return setState(state, action.state);
+  case 'UPDATE_BOOKMARK':
+    return setState(state, {'current_page_number': action.page_number});
   }
 
   // Unknown Action
