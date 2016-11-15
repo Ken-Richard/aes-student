@@ -14,24 +14,6 @@ function setState(state, newState) {
   }
 }
 
-function nextPage(state) {
-  console.log("REDUCER: nextPage");
-  const current_page = state.get('current_page')
-  if (current_page < state.get('pages').size) {
-    return state.set('current_page', current_page + 1);
-  }
-  return state;
-}
-
-function previousPage(state) {
-  console.log("REDUCER: previousPage");
-  const current_page = state.get('current_page')
-  if (current_page > 1) {
-    return state.set('current_page', current_page - 1);
-  }
-  return state;
-}
-
 function currentPageUpdated(state,action) {
   console.log("REDUCER: currentPageUpdated");
   return state.set('current_page', action.current_page);
@@ -48,10 +30,6 @@ export default function(state, action) {
   switch (action.type) {
   case 'SET_STATE':
     return setState(state, action.state);
-  case 'NEXT_PAGE':
-    return nextPage(state);
-  case 'PREVIOUS_PAGE':
-    return previousPage(state);
   case 'CURRENT_PAGE_UPDATED':
     return currentPageUpdated(state, action);
   }

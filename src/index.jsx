@@ -5,7 +5,7 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { Map } from 'immutable';
 
-import reducers from './reducers/reducer.js'
+import reducer from './reducers/reducer.js'
 import App from './components/App';
 import Welcome from './components/Welcome';
 import {PageContainer} from './components/Page';

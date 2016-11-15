@@ -7,7 +7,7 @@ export default React.createClass({
   render: function() {
     return <div className="page-body">
       <h1>Welcome!</h1>
-      <Link to="/pages/1">Let&39;s Get Started!</Link>
+      <Link to="/pages/1">Let's Get Started!</Link>
     </div>;
   }
 });
