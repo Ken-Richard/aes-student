@@ -5,9 +5,8 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { Map } from 'immutable';
 
-import reducers from './reducers/reducer.js'
+import reducer from './reducer.js'
 import App from './components/App';
-import Welcome from './components/Welcome';
 import {PageContainer} from './components/Page';
 import { setState } from './action_creators';
 
@@ -15,8 +14,7 @@ const store = createStore(reducer);
 store.dispatch(setState(null));
 
 const routes = <Route component={App}>
-  <Route path="/" component={Welcome} />
-  <Route path="/pages/:page_number" component={PageContainer} />
+  <Route path="/" component={PageContainer} />
 </Route>;
 
 ReactDOM.render(

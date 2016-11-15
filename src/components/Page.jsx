@@ -1,6 +1,6 @@
 import React from 'react';
 import PureRenderMixin from 'react-addons-pure-render-mixin';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import PageHeader from './PageHeader';
 import PageBody from './PageBody';
 import * as actionCreators from '../action_creators';
@@ -18,7 +18,7 @@ export const Page = React.createClass({
 
 function mapStateToProps(state, ownProps) {
   console.log('mapStateToProps')
-  const page_number = Number.parseInt(ownProps.params.page_number);
+  const page_number = state.get('current_page');
   const page = state.get('pages').get(page_number-1);
   const page_count = state.get('pages').size;
   return {

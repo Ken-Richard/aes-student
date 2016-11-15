@@ -1,5 +1,5 @@
 import {List, Map} from 'immutable';
-import {fixtures} from '../../src/fixtures';
+import {fixtures} from '../src/fixtures';
 
 function initialState() {
   return Map().merge(fixtures).set('current_page',1);
@@ -32,11 +32,6 @@ function previousPage(state) {
   return state;
 }
 
-function currentPageUpdated(state,action) {
-  console.log("REDUCER: currentPageUpdated");
-  return state.set('current_page', action.current_page);
-}
-
 export default function(state, action) {
 
   if (state==null) {
@@ -52,11 +47,8 @@ export default function(state, action) {
     return nextPage(state);
   case 'PREVIOUS_PAGE':
     return previousPage(state);
-  case 'CURRENT_PAGE_UPDATED':
-    return currentPageUpdated(state, action);
   }
 
   // Unknown Action
   return state;
-
 }
